@@ -17,6 +17,8 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
     AppComponent,
     TestComponent,
     StructuralDirectiveComponent,
+    CreateComponent,
+    ListComponent,
     routingComponents
   ],
   imports: [
