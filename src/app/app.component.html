@@ -4,8 +4,14 @@
   </h1>
   <h2>Message: {{ message }}</h2>
 </div>
-<app-employee-list (childEvent)="message=$event" [parentData]="name"></app-employee-list>
-<app-employee-detail></app-employee-detail>
+<ul class="routing">
+  <li routerLink="empList" routerLinkActive="active">List</li>
+  <li routerLink="empDetail" routerLinkActive="active">Detail</li>
+</ul>
+<router-outlet></router-outlet>
+
+<!-- <app-employee-list (childEvent)="message=$event" [parentData]="name"></app-employee-list>
+<app-employee-detail></app-employee-detail> -->
 <!-- The content below is only a placeholder and can be replaced.
 <div style="text-align:center">
   <h1>
@@ -28,11 +34,7 @@
 <!-- <input type="text" [(ngModel)]="name">
 <h3>{{name}}</h3> -->
 
-<!-- <ul>
-  <li routerLink="list">List</li>
-  <li routerLink="create">Create</li>
-</ul> -->
-<!-- <router-outlet></router-outlet> -->
+
 <!-- <div app-test></div> -->
 <!-- <app-structural-directive></app-structural-directive> -->
 <!-- <app-test (childEvent)="message=$event" [parentData]="name"></app-test> -->
