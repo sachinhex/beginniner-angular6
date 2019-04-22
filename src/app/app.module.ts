@@ -9,6 +9,7 @@ import { StructuralDirectiveComponent } from './structural-directive/structural-
 import { EmployeeService } from './employee.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -19,7 +20,8 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
     StructuralDirectiveComponent,
     CreateComponent,
     ListComponent,
-    routingComponents
+    routingComponents,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

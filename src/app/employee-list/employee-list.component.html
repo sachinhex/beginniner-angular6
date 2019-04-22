@@ -1,9 +1,13 @@
-<h4 class="alert alert-warning" *ngIf="errorMsg">{{errorMsg}}</h4>
-
-<div *ngIf="!errorMsg">
-  <h3 class="ml-3">{{"Employee " + company_name}}</h3>
-  <ul *ngFor="let employee of employees">
-    <li>{{employee.name}}</li>
-  </ul>
-  <button (click)="fireEvent()">Send Event</button>
+<div class="container">
+  <h4 class="alert alert-warning" *ngIf="errorMsg">{{errorMsg}}</h4>
+  
+  <div *ngIf="!errorMsg">
+    <h3 class="ml-3">{{"Employee " + company_name}}</h3>
+    <ul class="list-group">
+      <li class="list-group-item" (click)="onSelect(employee)" *ngFor="let employee of employees">
+        <span class="badge badge-secondary mr-3">{{employee.id}}</span>{{employee.name}}
+      </li>
+    </ul>
+    <button (click)="fireEvent()">Send Event</button>
+  </div>
 </div>

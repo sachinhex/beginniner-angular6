@@ -2,7 +2,7 @@
 
 <div *ngIf="!errorMsg">
   <h5 class="p-2 mt-3">
-    {{"Employee-details" |uppercase}}
+    {{"Employee-details " |uppercase}}{{employeeId}}
   </h5> 
   
   <ul *ngFor="let employee of employees">
