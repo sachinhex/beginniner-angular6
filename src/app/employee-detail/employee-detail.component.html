@@ -8,4 +8,7 @@
   <ul *ngFor="let employee of employees">
    <li>{{employee.id + "."}} {{employee.name + "-"}} {{employee.age}}</li> 
   </ul>
+  <a class="btn" (click)="goPrev();">Previous</a>
+  <a class="btn" (click)="goNext();">Next</a>
+  <button class="btn btn-default" (click)="gotoEmployees();">Back</button>
 </div>

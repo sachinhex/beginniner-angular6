@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { EmployeeService } from '../employee.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -14,21 +14,29 @@ export class EmployeeListComponent implements OnInit {
 
   public employees=[];
   public errorMsg;
+  public selectedId;
 
   fireEvent(){
     this.childEvent.emit("Hey child data is coming");
   }
   
-  constructor(private _employeeService:EmployeeService, private router:Router) { }
+  constructor(private _employeeService:EmployeeService, private route: ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
    this._employeeService.getEmployees()
    .subscribe(data =>this.employees=data,
    error => this.errorMsg = error
    );
+   this.route.paramMap.subscribe((params: ParamMap) =>{
+    let id =parseInt(params.get('id'));
+    this.selectedId= id;
+  });
   }
   onSelect(employee){
     this.router.navigate(['/empDetail', employee.id]);
+  }
+  isSelected(employee){
+    return employee.id === this.selectedId;
   }
 
 }
