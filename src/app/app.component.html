@@ -1,14 +1,32 @@
-<div style="text-align:center">
-  <h1>
+<div class="text-center jumbotron">
+  <h1 class="display-4">
     Welcome to {{title}}    
+    <h3 class="mt-2">{{ message }}</h3>
   </h1>
-  <h2>Message: {{ message }}</h2>
 </div>
-<ul class="routing">
-  <li routerLink="empList" routerLinkActive="active">List</li>
-  <li routerLink="empDetail" routerLinkActive="active">Detail</li>
-</ul>
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <div class="row routing">
+      <div class="col-sm-6">
+        <div class="card" routerLinkActive="active">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a  routerLink="employeelist"  class="btn btn-primary">Employee List</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card"  routerLinkActive="active">
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a routerLink="empDetail" class="btn btn-primary">Employee Detail</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+  <router-outlet></router-outlet>
 
 <!-- <app-employee-list (childEvent)="message=$event" [parentData]="name"></app-employee-list>
 <app-employee-detail></app-employee-detail> -->

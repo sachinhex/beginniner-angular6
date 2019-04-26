@@ -33,7 +33,8 @@ export class EmployeeListComponent implements OnInit {
   });
   }
   onSelect(employee){
-    this.router.navigate(['/empDetail', employee.id]);
+    // this.router.navigate(['/empDetail', employee.id]);
+    this.router.navigate([employee.id],{relativeTo:this.route}); //relative navigation
   }
   isSelected(employee){
     return employee.id === this.selectedId;

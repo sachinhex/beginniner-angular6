@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container-fluid mt-5">
   <h4 class="alert alert-warning" *ngIf="errorMsg">{{errorMsg}}</h4>
   
   <div *ngIf="!errorMsg">
     <h3 class="ml-3">{{"Employee " + company_name}}</h3>
-    <ul class="list-group">
+    <ul class="list-group col-6">
       <li class="list-group-item" [class.selected]="isSelected(employee)" (click)="onSelect(employee)" *ngFor="let employee of employees">
         <span class="badge badge-secondary mr-3">{{employee.id}}</span>{{employee.name}}
       </li>

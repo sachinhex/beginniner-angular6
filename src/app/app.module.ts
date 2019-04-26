@@ -10,6 +10,8 @@ import { EmployeeService } from './employee.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EmployeeOverviewComponent } from './employee-overview/employee-overview.component';
+import { EmployeeContactComponent } from './employee-contact/employee-contact.component';
 
 
 
@@ -21,7 +23,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     CreateComponent,
     ListComponent,
     routingComponents,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EmployeeOverviewComponent,
+    EmployeeContactComponent
   ],
   imports: [
     BrowserModule,
