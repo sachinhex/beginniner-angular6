@@ -9,8 +9,11 @@ import { EmployeeContactComponent } from './employee-contact/employee-contact.co
 
 const routes:Routes = [
   {path: '',redirectTo: '/employeelist', pathMatch: 'full'},
-  {path: 'employeelist',component: EmployeeListComponent},
-  {path: 'empDetail',component: EmployeeDetailComponent},
+  {path: 'template-list',
+  loadChildren: './template-list/template-list.module#TemplateListModule'
+  },
+  {path: 'employeelist', component: EmployeeListComponent},
+  {path: 'empDetail', component: EmployeeDetailComponent},
   {path: 'employeelist/:id',
    component: EmployeeDetailComponent,
    children: [
